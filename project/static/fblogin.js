@@ -1,4 +1,5 @@
 
+console.log("Fb login script loaded")
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
