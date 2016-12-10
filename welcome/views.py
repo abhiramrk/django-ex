@@ -28,5 +28,15 @@ def login(request):
         'count': PageView.objects.count()
     })
 
+def profile(request):
+    hostname = os.getenv('HOSTNAME', 'unknown')
+    PageView.objects.create(hostname=hostname)
+
+    return render(request, 'welcome/profile.html', {
+        'hostname': hostname,
+        'database': database.info(),
+        'count': PageView.objects.count()
+    })
+
 def health(request):
     return HttpResponse(PageView.objects.count())
