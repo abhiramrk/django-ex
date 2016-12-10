@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^login$', login),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('allauth.urls')),
 ]
