@@ -72,7 +72,7 @@ console.log("Fb login script loaded version 9")
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me'/*,{fields: 'gender, first_name, last_name, email, likes'}*/,function(response) {
+    FB.api('/likes'/*,{fields: 'gender, first_name, last_name, email, likes'}*/,function(response) {
       //console.log('Successful login for: ' + response.first_name+" "+response.email+" "+response.user_likes+" "+response.likes);
       console.log(response);
     //  document.getElementById('status').innerHTML =
