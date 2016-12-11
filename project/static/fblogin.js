@@ -67,19 +67,17 @@ console.log("Fb login script loaded version 9")
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/likes'/*,{fields: 'gender, first_name, last_name, email, likes'}*/,function(response) {
+    FB.api('/me'/*,{fields: 'gender, first_name, last_name, email, likes'}*/,function(response) {
       //console.log('Successful login for: ' + response.first_name+" "+response.email+" "+response.user_likes+" "+response.likes);
       console.log(response);
     //  document.getElementById('status').innerHTML =
       //  'Thanks for logging in, ' + response.name + '!';
-    },{scope: 'user_likes'});
+    },{scope: 'user_likes','email'});
   }
-
 ///// NEW CODE ///////////
 /*window.fbAsyncInit = function() {
     FB.init({
