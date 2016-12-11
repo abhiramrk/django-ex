@@ -1,5 +1,5 @@
 
-console.log("Fb login script loaded version 7")
+console.log("Fb login script loaded version 8")
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     //console.log('statusChangeCallback');
@@ -77,7 +77,7 @@ console.log("Fb login script loaded version 7")
       console.log(response);
     //  document.getElementById('status').innerHTML =
       //  'Thanks for logging in, ' + response.name + '!';
-    }/*,{scope: 'user_likes'}*/);
+    },{scope: 'user_likes'});
   }
 
 ///// NEW CODE ///////////
