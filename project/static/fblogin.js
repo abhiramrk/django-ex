@@ -77,12 +77,11 @@ console.log("Fb login script loaded version 2 ")
       console.log(response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-    }{scope: 'user_likes'});
+    },{scope: 'user_likes'});
   }
 
 ///// NEW CODE ///////////
-/*
-window.fbAsyncInit = function() {
+/*window.fbAsyncInit = function() {
     FB.init({
       appId      : '1737527669900907',
       xfbml      : true,
