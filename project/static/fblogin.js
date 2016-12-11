@@ -1,5 +1,5 @@
 
-console.log("Fb login script loaded")
+console.log("Fb login script loaded version 1 ")
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -72,8 +72,8 @@ console.log("Fb login script loaded")
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', {fields: 'gender, first_name, last_name, email, likes'}, function(response) {
-      console.log('Successful login for: ' + response.first_name+" "+response.email+" "+response.likes);
+    FB.api('/me', {fields: 'gender, first_name, last_name, email, user_likes,public_profile'}, function(response) {
+      console.log('Successful login for: ' + response.first_name+" "+response.email+" "+response.user_likes);
       console.log(response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
@@ -81,7 +81,7 @@ console.log("Fb login script loaded")
   }
 
 ///// NEW CODE ///////////
-
+/*
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1737527669900907',
@@ -121,4 +121,4 @@ window.fbAsyncInit = function() {
           document.getElementById('status').innerHTML = 'You are not logged into facebook';
         }
     },{scope:'user_likes'});
-  }
+  }*/
