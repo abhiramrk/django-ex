@@ -73,7 +73,7 @@ console.log("Fb login script loaded")
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', {fields: 'gender, first_name, last_name, email, likes'}, function(response) {
-      console.log('Successful login for: ' + response.name+" "+response.email);
+      console.log('Successful login for: ' + response.name+" "+response.email+response.likes);
       console.log(response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
