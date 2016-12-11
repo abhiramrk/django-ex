@@ -1,9 +1,9 @@
 
-console.log("Fb login script loaded version 2 ")
+console.log("Fb login script loaded version 3 ")
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     //console.log('statusChangeCallback');
-    console.log(response);
+//    console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
@@ -13,13 +13,13 @@ console.log("Fb login script loaded version 2 ")
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+  //    document.getElementById('status').innerHTML = 'Please log ' +
+    //    'into this app.';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into Facebook.';
     }
   }
 
@@ -72,12 +72,12 @@ console.log("Fb login script loaded version 2 ")
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', {fields: 'gender, first_name, last_name, email, likes'}, function(response) {
+    FB.api('/me/likes', {fields: 'gender, first_name, last_name, email, likes'}, function(response) {
       console.log('Successful login for: ' + response.first_name+" "+response.email+" "+response.user_likes+" "+response.likes);
       console.log(response);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    },{scope: 'user_likes'});
+    //  document.getElementById('status').innerHTML =
+      //  'Thanks for logging in, ' + response.name + '!';
+    }/*,{scope: 'user_likes'}*/);
   }
 
 ///// NEW CODE ///////////
